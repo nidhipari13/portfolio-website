@@ -150,7 +150,7 @@ const About = () => {
                       <path d="M6 2a1 1 0 00-1 1v2H4a2 2 0 00-2 2v2a1 1 0 001 1h1v5a2 2 0 002 2h2a1 1 0 001-1v-1h2v1a1 1 0 001 1h2a2 2 0 002-2v-5h1a1 1 0 001-1V7a2 2 0 00-2-2h-1V3a1 1 0 00-1-1H6z" />
                     </svg>
                   </div>
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">3+</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">5+</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Projects</p>
                 </div>
                 <div className="rounded-xl border border-gray-100 bg-white p-4 text-center shadow-sm hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">
