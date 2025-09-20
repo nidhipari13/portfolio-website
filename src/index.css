@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Subtle animated gradient for the name in Hero */
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.animated-name {
+  background-image: linear-gradient(90deg, #4f46e5, #818cf8, #4f46e5);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-name {
+    animation: none;
+    background-image: none;
+    color: inherit;
+  }
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--tw-type-ch, 13ch); }
+}
+@keyframes caret-blink {
+  0%, 49% { border-color: currentColor; }
+  50%, 100% { border-color: transparent; }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: var(--tw-caret-width, 2px) solid currentColor;
+  width: 0; /* will animate to --tw-type-ch */
+  animation:
+    typing var(--tw-type-duration, 3.5s) steps(var(--tw-type-steps, 13), end) forwards,
+    caret-blink var(--tw-caret-blink, 1s) step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter {
+    width: auto;
+    border-right: none;
+    animation: none;
+  }
+}
+
+/* Gentle float animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Subtle sway animation */
+@keyframes sway {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(0.8deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.sway-slow {
+  animation: sway 10s ease-in-out infinite;
+}
+
+/* Gentle breathe (scale) animation */
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.breathe-slow {
+  animation: breathe 12s ease-in-out infinite;
+}
+
+/* Unique orbital drift animation (elliptical path + tiny tilt) */
+@keyframes orbit {
+  0%   { transform: translateX(0) translateY(0) rotate(0deg) scale(1); }
+  25%  { transform: translateX(8px) translateY(-6px) rotate(0.6deg) scale(1.005); }
+  50%  { transform: translateX(0) translateY(-10px) rotate(0deg) scale(1.01); }
+  75%  { transform: translateX(-8px) translateY(-6px) rotate(-0.6deg) scale(1.005); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg) scale(1); }
+}
+
+.orbit-slow {
+  animation: orbit 14s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orbit-slow:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .sway-slow,
+  .breathe-slow,
+  .orbit-slow {
+    animation: none;
+  }
+}
