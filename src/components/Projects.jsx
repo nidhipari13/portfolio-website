@@ -24,8 +24,8 @@ const projects = [
     description: 'Personal portfolio built with React + Vite + Tailwind, smooth scroll and subtle motion.',
     image: IMG.one,
     tech: ['React', 'Vite', 'Tailwind'],
-    live: '#',
-    code: '#',
+    live: 'https://magnificent-sunburst-657d6f.netlify.app/',
+    code: 'https://github.com/nidhipari13/portfolio-website.git',
   },
   {
     title: 'E-commerce UI',
