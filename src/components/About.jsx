@@ -4,14 +4,12 @@ import Reveal from './Reveal'
 import { useSpring, animated, config } from '@react-spring/web'
 
 const About = () => {
-  // Entrance animation: fade in + scale up + slight rotation
   const mountSpring = useSpring({
     from: { opacity: 0, scale: 0.8, rotateZ: -5 },
     to: { opacity: 1, scale: 1, rotateZ: 0 },
     config: config.wobbly,
   })
 
-  // Hover animation: 3D tilt + wobble + scale
   const [hoverSpring, api] = useSpring(() => ({
     rotateX: 0,
     rotateY: 0,
@@ -21,19 +19,16 @@ const About = () => {
     config: { mass: 1, tension: 300, friction: 15 },
   }))
 
-  // Handlers for mouse move to create tilt effect
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left // x position within element
-    const y = e.clientY - rect.top // y position within element
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
     const centerX = rect.width / 2
     const centerY = rect.height / 2
 
-    // Calculate rotation relative to center (max 15deg)
-    const rotateX = ((y - centerY) / centerY) * 15 * -1 // invert rotation
+    const rotateX = ((y - centerY) / centerY) * 15 * -1
     const rotateY = ((x - centerX) / centerX) * 15
 
-    // Skew for extra wobble effect (max 5deg)
     const skewX = ((x - centerX) / centerX) * 5 + 'deg'
     const skewY = ((y - centerY) / centerY) * 5 + 'deg'
 
@@ -101,7 +96,7 @@ const About = () => {
             </animated.div>
           </Reveal>
 
-          {/* Text side */}
+          {/* Text column */}
           <Reveal delay={100}>
             <div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
@@ -114,29 +109,31 @@ const About = () => {
                 mindset to a dynamic DevOps team.
               </p>
 
-              {/* CTA row */}
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="../assets/resume.pdf"
-                  download
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 px-4 py-2 text-white shadow-sm hover:from-primary-700 hover:to-primary-600 transition-colors"
-                >
-                  Download CV
-                  <svg
-                    className="ml-2 h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                  </svg>
-                </a>
-              </div>
+              {/* Resume row */}
+             <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 px-4 py-2 text-white shadow-sm hover:from-primary-700 hover:to-primary-600 transition-colors"
+          >
+            View Resume
+            <svg
+              className="ml-2 h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+            </svg>
+          </a>
+        </div>
+
 
               <div className="mt-6 grid sm:grid-cols-3 gap-4">
                 <div className="rounded-xl border border-gray-100 bg-white p-4 text-center shadow-sm hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">

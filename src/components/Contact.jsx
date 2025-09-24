@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
 
   const handleChange = (e) => {
@@ -72,7 +72,8 @@ const Contact = () => {
         )}
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Contact Info Card */}
+
+          {/* Contact Card */}
           <div className="group p-8">
   <h3 className="text-xl font-semibold text-gray-900">Contact Information</h3>
   <p className="mt-2 text-gray-600">I’ll get back to you within 24–48 hours.</p>

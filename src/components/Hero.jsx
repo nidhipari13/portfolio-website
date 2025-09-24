@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 const Hero = () => {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-b from-primary-50/60 to-white dark:from-gray-950 dark:to-gray-900">
-      {/* Subtle background illustration */}
+      {/* Background illustration */}
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10">
         <svg
           className="w-full h-40 text-primary-100/60 dark:text-primary-900/30"

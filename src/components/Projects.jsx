@@ -7,8 +7,6 @@ import foodweb from '../assets/foodweb.png';
 import trafficmanag from '../assets/trafficmanag.png';
 import shoWeb from '../assets/shoWeb.png';
 
-
-
 const IMG = {
   one: portfolio,
   two: ecomm,
